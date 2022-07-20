@@ -5,9 +5,10 @@ import helper
 
 def read_airlines(filename='airlines.dat'):
     airlines = {}  # Map from code -> name
-    with open(filename) as f:
+    with open(filename, encoding="utf8") as f:
         reader = csv.reader(f)
         for line in reader:
+            #print(line[0], line[4], line[1])
             airlines[line[4]] = line[1]
     return airlines
 
